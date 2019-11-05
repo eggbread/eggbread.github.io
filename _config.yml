@@ -2,13 +2,12 @@ title:              Eggbread Blog
 email:              gyeongmin251@gmail.com
 description:        A Blog Theme by Start Bootstrap
 author:             Gyeongmin Kim
-
 url:                "https://eggbread.github.io"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    BlackrockDigital
-facebook_username:  StartBootstrap
+twitter_username:  
+github_username:    eggbread
+facebook_username:  
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
