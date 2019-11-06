@@ -1,0 +1,15 @@
+I"q<h1 id="nextjs란">Next.js란?</h1>
+<p>React JS를 이용한 Server Side Rendering framework</p>
+<ol>
+  <li>SSR</li>
+  <li>자동으로 코드 스플릿</li>
+  <li>Client Side Rounting을 제공(내장)</li>
+  <li>Webpack 기반의 개발 환경</li>
+  <li>Express나 다른 Node.js 서버 구현</li>
+</ol>
+
+<hr />
+
+<h1 id="ssr">SSR?</h1>
+<p>Server Side Rendering의 약어로써 서버에서 렌더링 작업을 합니다. 사용자가 웹페이지에 접근할 때, 서버에 페이지에 대한 요청을 하며 서버에서는 HTML, view와 같은 리소스들을 어떻게 보여질지 해석하고 렌더링하여 사용자에게 반환합니다. 반대로 CSR(Client Side Rendering)은 최초에 1번 서버에서 전체 페이지를 로딩하여 보여주고 이후에는 요청이 올 때마다 이를 클라이언트가 해석하고 렌더링하는 방식입니다.</p>
+:ET

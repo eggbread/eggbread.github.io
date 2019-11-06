@@ -26,9 +26,19 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-
-        {{ content }}
-
+        {% if page.url contains '/posts/' %}
+          {% for category in site.categories %}
+            <h3>{{ category[0] }}</h3>
+            <ul>
+              {% for post in category[1] %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        
+        {% else %}
+        {{content}}
+        {% endif %}
       </div>
     </div>
   </div>

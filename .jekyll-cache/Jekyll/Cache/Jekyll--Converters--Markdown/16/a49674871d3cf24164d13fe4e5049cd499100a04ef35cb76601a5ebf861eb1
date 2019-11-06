@@ -1,0 +1,10 @@
+I"4<h1 id="nextjs란">Next.js란?</h1>
+<p>React JS를 이용한 Server Side Rendering framework</p>
+<ol>
+  <li>SSR</li>
+  <li>자동으로 코드 스플릿</li>
+  <li>Client Side Rounting을 제공(내장)</li>
+  <li>Webpack 기반의 개발 환경</li>
+  <li>Express나 다른 Node.js 서버 구현</li>
+</ol>
+:ET
