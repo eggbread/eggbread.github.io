@@ -1,0 +1,28 @@
+---
+layout: post
+title: "DeepLearning"
+subtitle: "신경망 학습"
+date: 2019-11-06 14:26:28 -0400
+background: '/img/posts/06.jpg'
+categories: [DeepLearning]
+---
+<!-- <img src="http://chart.apis.google.com/chart?cht=tx&chl=1/2sigma" /> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>신경망 학습</h2>
+    <p><strong>학습</strong>이란 훈련 데이터로부터 가중치 매개변수의 최적값을 자동으로 획득하는 것</p>
+    <p>이미지에서 특징(feature)를 추출하고 그 특징의 패턴을 학습시킨다.</p>
+    <p>Deep Learning에서는 현재의 상태를 '하나의 지표'로 표현합니다. 그 지표를 가장 좋게 만들어주는 매개변수의 값을 탐색하는 것입니다.</p>
+    <p>r=그 지표를 손실함수라고 합니다. 가장 많이 쓰이는 손실 함수는 평균 제곱 오차입니다. </p>
+        <img style="width: 200px;" src="data:image/png;base64,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" alt="">
+    <h2>What is CNN?</h2>
+</body>
+</html>
+<p>CNN은 레고 블록처럼 계층을 조합하여 만들 수 있습니다. 다만 합성곱 계층(concolutional layer)와 풀링 계층(pooling layer)이 등장합니다.</p>
