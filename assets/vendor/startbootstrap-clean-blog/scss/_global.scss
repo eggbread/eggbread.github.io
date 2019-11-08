@@ -3,7 +3,7 @@ body {
   font-size: 20px;
   color: $gray-900;
   @include serif-font;
-  font-family: 'Poor Story';
+  font-family: 'Poor Story' !important;
 }
 
 p {
