@@ -1,0 +1,117 @@
+---
+layout: post
+title: "Convolutional Neural Networks"
+subtitle: "About DeepLearning Term"
+date: 2019-11-16 14:26:28 -0400
+background: '/img/posts/06.jpg'
+categories: [Machine Learning]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Summary of CNN</h3>
+    <ul>
+        <li>
+            <h5> Types of layer in a Convolution Network</h5>
+                <ol>
+                        <li>Convolution</li>
+                        <li>Pooling</li>
+                        <li>F ully Connected</li>
+                    </ol>
+        </li>
+        <li>
+            <h6>Convolution</h6>
+            <span>How can computer detect edge in the picture?</span><br>
+            <span>Assume there are 6*6 picture and 3*3 filter.</span><br>
+            <span>Like below, we can get 4*4 vertical edge Matrix By convolution </span>
+            <img src="../../../../../img/posts/edgedetection.png" alt="" style="width: 80%;">
+            <br><span>n x n Matrix * f x f Matrix = (n-f+1) x (n-f+1) Matrix</span><br>
+            <span>There are two disadvantages. <br>first is Image is getting smaller. <br>Second, We have to throw away about edge information.
+            So We can add padding bytes. <br>(n+2p) x (n+2p) Matrix * f x f Matrix = (n+2p-f+1) x (n+2p-f+1) Matrix (p is padding size)
+            <br> If stride > 1, <br>
+            <img src="http://chart.apis.google.com/chart?cht=tx&chl=({(n%2B2p-f)\over{2}}%2B1)*({(n%2B2p-f)\over{2}}%2B1)" style="width: 250px;"/>
+        </span>
+        </li>
+        <li>
+            <span>About 3D<br>
+                Like below, RGB is expressed 3 channels <br>
+                <img src="http://xrds.acm.org/blog/wp-content/uploads/2016/06/Figure1.png" style="width: 400px;" alt=""><br>
+                And then, We do the convolution with 3 x 3 filter. If there ara many filters, We can get 4 x 4 x n ouput. It became a input in new Layer. And That is Convolution Neural Network <br>
+                <img src="http://www.omegaxyz.com/wp-content/uploads/2018/08/cnn-rgb13.png" style="width:60%" alt=""><br>
+                <br>
+            </span>
+            
+        </li>
+        <li>
+            <span>
+                <h6>Pooling</h6>
+                For example Max pooling, Instead of calculation, We choose max value in each filter. If there are many channels, Output also has many channels. These is independent.
+                <br><img src="https://miro.medium.com/max/1304/1*Sh9e6Hzx8ZcOinuLvy8Fmw.png" style="width: 70%;" alt="">
+            </span>
+        </li>
+        <li>
+            <span>
+                <h6>Fully Connected</h6>
+                Through Fully Connected Layer n X n X 3 Layer is strected to n^2 x 1
+            </span>
+        </li>
+        <li>
+            <span>
+                <h6>Architecture of CNN</h6>
+                <img src="https://miro.medium.com/max/3288/1*uAeANQIOQPqWZnnuH-VEyw.jpeg" style="width:80%" alt="">
+            </span>
+        </li>
+    </ul>
+    <ul>
+        <h3>Classic Networks</h3>
+        <li>
+            <span>
+                <h6>LeNet-5</h6>
+                <img src="https://angrypark.github.io/images/2018-01-20/1.PNG" style="width: 80%;" alt=""><br>
+                As we can see, LeNet-5 Layer use average pooling and Fully Connected Layer twice. And then, Through Softmax 10 output.
+            </span>
+        </li>
+        <li>
+            <h6>AlexNet</h6>
+            <span>
+                AlexNet is the first paper to make deep learning for computer vision a craze. AlexNet input start with 227 x 227 x 3 image. And use 11 x 11 filter, stride is 4. And use 3 x 3 max pooling. After use same convolution, max pooling. Finally we can get 6 x 6 x 256 (9216 Node) Matrix 
+                ANd use Fully Connected Layer, Softmax. AlexNet has 60M parameters. <br> <img src="http://media5.datahacker.rs/2018/11/alexnet_ispravljeno.png" width="80%" alt="">
+            </span>
+        </li>
+        <li>
+            <h6>VGG-16</h6>
+            Although VGG-16 has lots of hyper parameters, It use more simple network. <br>
+            <img src="http://media5.datahacker.rs/2019/02/vgg.png" width="80%" alt="">
+        </li>
+    </ul>
+    <ul>
+        <h3>Object Detection</h3>
+        <li>
+            <h4>Object Localization</h4>
+            <span>Before we do Object Detectin, We have to do Object Localization, We have to classificate with localization in image
+                <br><img src="http://media5.datahacker.rs/2018/11/slika1-1.png" width="80%" alt=""><br>
+                How can we find the location the car in the image? To do that, We can change our neural network to have a few more ouput units that ouput a bounding box.
+                Object in image is expressed y = [ pc(if 1 is object), bx, by, bh, bw, class1, class2, ...] <br> In this, Neural Network can make output bx, by in primary position. It is called Landmark. 
+                For example, lx1,ly1 point left eye of top position and lx2, ly2 point bottom position. Distance of these landmark can detect eye closures. <br>
+                <h6>Sliding windows detection</h6>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdIOLShCtCMuLBSJvy4gRxv3gCZdV37564eThNUxPrIKFOEELxDw&s" width="30%" alt=""><br>
+                We can use small window like red rectangle. Window is moving top left to bottom right. If window detect something, It will make ouput through neural network. However, Sliding window detection has large disadvantage, which is the computational cost.
+                It can be better using convolutional implementation. Nevertheless It can't detect accurate bounding box. A good way to get this ouput more accurate bounding boxes is with the YOLO algorithm.
+            </span>
+        </li>
+        <li>
+            <h4>YOLO Algorithm</h4>
+            <img src="https://i.ytimg.com/vi/9s_FpMpdYW8/maxresdefault.jpg" width="80%" alt=""> <br>
+            Instead of Sliding window, place down a grid on image. In example, Image is sliced 9 grid. A grid what has object will make output y. We can figure out where object is located. What we have to focus on, We're not implementing this algorithm 9 times. Instead, This is one single convolutional implantation.
+            So this is a pretty efficient algorithm.
+        </li>
+    </ul>
+</body>
+</html>
