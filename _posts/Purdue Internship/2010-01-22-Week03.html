@@ -1,0 +1,85 @@
+---
+layout: post
+title: "Purdue Week 3"
+subtitle: "Basic Work "
+date: 2020-01-02 14:26:28 -0400
+background: '/img/posts/06.jpg'
+categories: [Purdue Internship]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Purdue Week 3</title>
+</head>
+<body>
+    <h3>What we did</h3>
+    <div>
+        <p>We search several <strong>Object Tracking Algorithm</strong> like below. </p>
+        <ul>
+            <li>SORT Tracking</li>
+            <li>Boosting Tracker : 오래되서 안씀</li>
+            <li>
+                MIL(Multiple Instance Learning) Tracker : Boosting Tracker와 유사하지만,
+                Tracking할 때 잠재 가능성을 위해 주변도 탐지
+                - 꽤 괜찮은 성능, OpenCV 3.0을 쓸 때 최고
+                - Tracking failure가 안정적으로 report되지 않음
+            </li>
+            <li>
+                KCF(Kernelized Correlation Filters) Tracker : 위 두 Tracker의 아이디어 기반,
+                겹치는 데이터를 더 빠르고 정확하게 추적
+                - 위의 두개보다 좋다. OpenCV 3.1 또는 이상에서는 추천
+                - failure가 완전복구 되지 않음
+                - BUG : OpenCV 3.1(Python only) Bounding box 버그
+            </li>
+            <li>
+                TLD(Tracking, learning and detection) Tracker : 일시적으로 Object를 분간할 수 있음
+                - 다중 프레임에서 최고의 효과, 사이즈 변화에 따른 Tracking
+                - Lots of false positives making it almost unusable.
+            </li>   
+            <li>
+                MEDIANFLOW Tracker : 시간의 전후 방향 모두 물체를 추적, 두 궤도 사이의 불일치 측정
+                * (개인적인 의견) 움직임이 예상가능하고 작으면 최고의 효과, 추적 실패 시 Tracker가 알고있음
+                - failure의 완벽한 reporting
+                - 큰 모션에는 불리
+            </li>
+            
+            <li>
+                GOTURN(Generic Object Tracking Using Regression Netwroks) Tracker(OpenCV기준 20FPS)
+                : CNN을 기반으로 한 Tracker, 이전 프레임을 기반으로 다음 프레임의 위치를 예측에서 Tracking
+                <a href="https://www.learnopencv.com/goturn-deep-learning-based-object-tracking/
+                    https://youtu.be/SygkiWNSkWk">Refference</a> <br/>
+                    - Tracking하는 Object와 유사한 방향으로 가는 Object에 의해 가려질 때 에러 가능성
+            </li>
+            <li>
+                MOSSE(Minimum Output Sum of Squared Error) Tracker : 조명, 스케일, 포즈 및 비강체 변형 변화에 강함
+                - 구현이 쉽고 다른 Tracker 만큼 정확하고 훨씬 더 빠르다.
+                - Deep Learning Tracker에 비해는 덜함
+            </li>
+            <li>
+                CSRT(Channel and Spatial Reliability Tracker) :  채널 및 공간 신뢰성이 있는 차별적 상관 관계 필터
+                선택 영역의 확대 및 비직사각형 영역 또는 객체의 추적 개선을 보장
+                - 비교적 낮은 fps(25 fps)에서도 작동하고 정확도는 더 높다.
+                <a href="https://www.youtube.com/watch?v=rRZYuRQknS4">Refference</a>
+            </li>
+            
+            <h6>Video</h6>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=9vEwSqkKLB0">1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=pj-QuE6pdEQ">2</a></li>
+                <li><a href="https://www.youtube.com/watch?v=LzYUTbGAEpA">3</a></li>
+            </ul>
+            
+            <p> In base of this things, We connected YOLO and Tracking Algorithm.</p>
+            <video width="320" height="240" controls>
+                <source src="../../../../img/purdue/outpy.avi" type="video/avi">
+                Your browser does not support the video tag.
+            </video>
+
+        </ul>
+    </div>
+</body>
+</html>
