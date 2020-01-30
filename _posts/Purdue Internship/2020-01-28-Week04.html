@@ -17,21 +17,21 @@ categories: [Purdue Internship]
 </head>
 <body>
     <h3>Week Log</h3>
-    <ol>
+    <ul>
         <li>
             <h5>Monday</h5>
-            <ol>
+            <ul>
                 <li>
                     <p>YOLOv3와 Sort Algorithm을 연결한 후 이를 노트북 캠 카메라로 연결하여 테스트. </p>
                 </li>
                 <li>
                     <p>낮은 FPS를 확인</p>
                 </li>
-            </ol>
+            </ul>
         </li>
         <li>
             <h5>Tuesday</h5>
-            <ol>
+            <ul>
                 <li>
                     <p>낮은 FPS를 올리기 위해 frame을 짝수번만 돌림 약 2배 향상됌.</p>
                 </li>
@@ -48,11 +48,11 @@ categories: [Purdue Internship]
                 <li>
                     <p>Darknet을 직접 Make하면 다를지 확인해보기</p>
                 </li>
-            </ol>
+            </ul>
         </li>
         <li>
             <h5>Wednesday</h5>
-            <ol>
+            <ul>
                 <li>
                     <p>FPS를 올리기 위해 임시방편으로 Frame을 3번에 한번만 Detect 해보도록 변경 FPS가 9.7까지 향상 Accuracy는 측정필요</p>
                 </li>
@@ -62,7 +62,22 @@ categories: [Purdue Internship]
                 <li>
                     <p>Tracking 결과를 두번 update하니 더 높은 정확도를 얻는다</p>
                 </li>
-            </ol>
+            </ul>
+        </li>
+        <li>
+            <h5>Thursday</h5>
+            <ul>
+                <li>
+                    <p>Update를 여러번하면 Tracking Accuracy가 좋아진다는 특징을 이용하여 70%이상의 Tracking이 성공한 Frame만 입력하도록 변경</p>
+                    <p>FPS가 낮아지는 만큼 높아진 Accuracy를 확인</p>
+                </li>
+                <li>
+                    <p>Bird Detection에서 또한 괜찮은 Accuracy를 확인</p>
+                </li>
+                <li>
+                    <p>In real-time highest FPS : 7.5</p>
+                </li>
+            </ul>
         </li>
     </ul>
 </body>
