@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Cross-Entropy"
+subtitle: "About Cross-Entropy"
+date: 2020-04-15 16:26:28 -0400
+background: '/img/posts/06.jpg'
+categories: [Machine Learning]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cross-Entropy</h1>
+    <div>
+        <p>Cross는 말그대로 p(x)와  q(x)가 서로 교차해서 곱한다는 의미이다.</p>
+        <p>Entropy값이 정보를 최적으로 인코딩하기 위한 필요한 bit라면</p>
+        <p>Cross-Entropy는 틀릴 수 있는 정보 양을 고려한 최적으로 인코딩할 수 있게 해주는 정보량으로 볼 수 있다.</p>
+        <p>주로 Regression에서는 최소자승법(MSE)이 cost function으로 쓰이고 <br>Classification에서는 Cross-Entropy가 쓰이며<br>여러 class를 분류하는 Softmax에서 cost function으로 쓰이곤 한다.</p>
+        <p>공식 <br> Cross-Entropy = P(X)*-log(Q(X)) <br>P(X) : Target, Q(X) : Prediction</p>
+        <p>1) Target과 Prediction이 다를 때 2) Target과 Prediction이 같을 때</p>
+        <img src="https://mblogthumb-phinf.pstatic.net/MjAxODAzMjRfODEg/MDAxNTIxODQxMzMxNzc3.QvYhpNtjm4kHg-TpmNAJKlg06N9oS0hPiN2C8PDpFsIg.DPcsAilCff5-utO2jACEeQPHsT_2n6lxqxHOJ_df9f8g.PNG.yonggeol93/Cross_entropy_%EC%88%98%EC%8B%9D.png?type=w2" alt="">
+        <img src="https://mblogthumb-phinf.pstatic.net/MjAxODAzMTZfMTQ3/MDAxNTIxMjA0MjU5MTU4.a9wtjMvYKLe2xeiYlf16p7LeFdzUfPfwqY-cc09_yUEg.8YsawUE2TKpyEhKuDQRleT-c4ZQcpC1l8dw-N0GXiGcg.PNG.yonggeol93/-log%EA%B7%B8%EB%9E%98%ED%94%84.png?type=w2" alt="">
+        <p>Cross-Entropy 값은 실제값과 예측값이 맞았을 경우에는 0으로 수렴하며 <br>값이 틀릴경우 무한대로 발산하기 때문에 <br>예측값과 실제값이 같도록 <br>Cross-Entropy를 loss function으로 둔다.</p>
+    </div>
+</body>
+</html>
